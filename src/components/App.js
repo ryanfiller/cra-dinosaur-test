@@ -57,11 +57,7 @@ class App extends Component {
         <Route
           render={({ location }) => (
             <div>
-              <Route
-                exact
-                path="/"
-                render={() => <Redirect to={dinosaurs[0]} />}
-              />
+              {console.log(location)}
 
               <Nav dinosaurs={dinosaurs} />
 
