@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Dinosaur from './dinosaur';
 import Nav from './navigation';
 
-import { dinosaurs } from '../data/dinosaurs'
+import { dinosaurs } from '../config/dinosaurs'
 
 
 injectGlobal`

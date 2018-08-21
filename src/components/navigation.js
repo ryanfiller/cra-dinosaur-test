@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
+import { colors } from '../config/colors';
+
+const StyledNav = styled.ul`
+    li a {
+        color: ${colors.red};
+    }
+`
+
 class Nav extends Component {
     render() {
        return (
-        <ul>
+        <StyledNav>
             {this.props.dinosaurs.map( (dinosaur, index) => {
                 return (
                     <li key={index}>
@@ -15,7 +23,7 @@ class Nav extends Component {
                     </li>
                 )
             })}
-        </ul>
+        </StyledNav>
        )
     }
 }
