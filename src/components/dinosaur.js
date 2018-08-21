@@ -3,10 +3,13 @@ import styled from 'styled-components';
 
 class Dinosaur extends Component {
     render() {
+
+        const {dinosaurName} = this.props;
+
         return (
-            <p>
-                {this.props.dinosaurName}
-            </p>
+            <div>
+                <img src={require(`../images/${dinosaurName}.png`)} alt={dinosaurName}/>
+            </div>
         )
     }
 }
