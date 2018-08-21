@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import logo from '../images/logo.svg';
 
 const StyledApp = styled.div`
-    .App {
-        text-align: center;
-    }
+    text-align: center;
 
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
