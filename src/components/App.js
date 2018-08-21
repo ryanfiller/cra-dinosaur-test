@@ -3,10 +3,11 @@ import { injectGlobal } from 'styled-components';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+import { dinosaurs } from '../config/dinosaurs'
+import { styles } from '../config/styles'
+
 import Dinosaur from './dinosaur';
 import Nav from './navigation';
-
-import { dinosaurs } from '../config/dinosaurs'
 
 
 injectGlobal`
@@ -15,7 +16,7 @@ injectGlobal`
       padding: 0;
 
       * {
-        transition: 1s;
+        transition: ${styles.transition}ms;
       }
   }
 
@@ -66,7 +67,7 @@ class App extends Component {
 
               <div style={{position: 'relative'}}>
                 <TransitionGroup>
-                  <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                  <CSSTransition key={location.key} classNames="fade" timeout={{ enter: styles.transition, exit: styles.transition }}>
                     <Switch location={location}>
                       {dinosaurs.map( (dinosaur, index) => {
                         return (
