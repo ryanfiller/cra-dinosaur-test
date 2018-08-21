@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { injectGlobal } from 'styled-components';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import Dinosaur from './dinosaur';
+import Nav from './navigation';
 
 import { dinosaurs } from '../data/dinosaurs'
 
@@ -19,17 +20,7 @@ class App extends Component {
     return (
       <BrowserRouter>
           <div>
-            <ul>
-              {dinosaurs.map( (dinosaur, index) => {
-                return (
-                  <li key={index}>
-                    <Link to={dinosaur}>
-                      {dinosaur}
-                     </Link>
-                  </li>
-                )
-              })}
-            </ul>
+            <Nav dinosaurs={dinosaurs} />
 
             {dinosaurs.map( (dinosaur, index) => {
               return (
