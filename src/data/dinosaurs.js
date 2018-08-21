@@ -1,4 +1,4 @@
-export default dinosaurs = [
+export const dinosaurs = [
     'ankylosaurus',
     'brachiosaurus',
     'parasaurolophus',
