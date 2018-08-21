@@ -16,7 +16,9 @@ injectGlobal`
 `
 
 class App extends Component {
+
   render() {
+
     return (
       <BrowserRouter>
           <div>
@@ -24,9 +26,9 @@ class App extends Component {
 
             {dinosaurs.map( (dinosaur, index) => {
               return (
-                  <Route path={`/${dinosaur}`} key={index} 
-                    render={() => <Dinosaur dinosaurName={dinosaur} />}
-                  />
+                <Route path={`/${dinosaur}`} key={index}
+                  render={() => <Dinosaur dinosaurName={dinosaur} />}
+                />
               )
             })}
 
