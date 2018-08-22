@@ -43,6 +43,7 @@ class Nav extends Component {
         e.preventDefault()
         this.props.history.push(e.target.getAttribute('href'))
         this.toggleNav()
+        localStorage.setItem('dinosaur', e.target.getAttribute('href').replace('/', ''))
     }
 
     render() {

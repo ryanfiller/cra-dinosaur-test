@@ -42,6 +42,18 @@ const StyledApp = styled.div`
 
 export default class App extends Component {
 
+	constructor(props) {
+		super(props);
+	
+		if (localStorage.getItem('dinosaur')) {
+			var localDinsoaur = localStorage.getItem('dinosaur')
+		}
+
+		this.state = {
+			dinosaur: localDinsoaur,
+		};
+	}
+
 	componentDidMount() {
 		// window.screen.orientation.lock('portrait-primary')
 	}
@@ -55,7 +67,7 @@ export default class App extends Component {
 							<div>
 								<Route
 									exact path="/"
-									render={() => <Redirect to={dinosaurs[0]} />}
+									render={() => <Redirect to={this.state.dinosaur ? this.state.dinosaur : dinosaurs[0]} />}
 								/>
 
 								<Dinosaurs
