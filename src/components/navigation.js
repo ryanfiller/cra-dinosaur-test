@@ -76,7 +76,7 @@ const StyledNav = styled.nav`
         z-index: 500;
         position: absolute;
         top: .5em;
-        left: .5em;
+        right: .5em;
     }
 
     ul {
@@ -90,10 +90,10 @@ const StyledNav = styled.nav`
         z-index: -1;
         
         li {
-            padding-left: 3.5em;
+            padding-right: 3.5em;
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             transform-origin: center left;
             overflow: hidden;
 
@@ -123,7 +123,7 @@ const StyledNav = styled.nav`
     &.closed {
         li {
             transform: rotate(0deg) !important;
-            padding-left: 1.5em;
+            padding-right: 1.5em;
         }
     }
 `
