@@ -65,7 +65,7 @@ export default NavWithRouter
 
 const StyledNav = styled.nav`
 
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 1em;
     position: relative;
     padding: 1rem;
@@ -86,14 +86,13 @@ const StyledNav = styled.nav`
         padding: 0;
         list-style: none;
         height: 1em;
-        padding-left: 1em;
         width: 100%;
         position: relative;
         z-index: -1;
         
         li {
             position: absolute;
-            padding: 0 3.5em 0 1rem;
+            padding: 0 3.5em 0 0;
             top: 0;
             right: 0;
             transform-origin: center right;
@@ -115,13 +114,9 @@ const StyledNav = styled.nav`
                 a {
                     color: ${colors.active};
                     text-shadow: .5rem .5rem .5em ${colors.background},
-                                 1rem 1rem .5em ${colors.background},
                                  -.5rem .5rem .5em ${colors.background},
-                                 -1rem 1rem .5em ${colors.background},
                                  .5rem -.5rem .5em ${colors.background},
-                                 1rem -1rem .5em ${colors.background},
-                                 -.5rem -.5rem .5em ${colors.background},
-                                 -1rem -1rem .5em ${colors.background};
+                                 -.5rem -.5rem .5em ${colors.background};
                 }
             }
         }
