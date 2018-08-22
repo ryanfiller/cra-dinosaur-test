@@ -83,8 +83,8 @@ const StyledNav = styled.nav`
         width: 1em;
         z-index: 500;
         position: absolute;
-        top: .5em;
-        right: .5em;
+        top: 1rem;
+        right: 1rem;
     }
 
     ul {
