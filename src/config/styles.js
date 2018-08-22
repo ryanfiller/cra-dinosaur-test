@@ -1,3 +1,3 @@
 export const styles = {
-    'transition': '500',
+    'transition': '250',
 }
