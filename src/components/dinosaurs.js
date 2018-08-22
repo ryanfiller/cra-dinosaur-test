@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import styled, {injectGlobal} from 'styled-components';
+import styled from 'styled-components';
 
 import Dinosaur from './dinosaur'
 

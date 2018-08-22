@@ -17,7 +17,13 @@ const StyledNavicon = styled.div`
         display: block;
         height: .25rem;
         width: 100%;
-        background-color: ${colors.color}
+        background-color: ${colors.color};
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .open & {
+        background: green;
     }
 `
 
