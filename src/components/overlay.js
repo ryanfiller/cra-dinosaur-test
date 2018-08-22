@@ -26,6 +26,7 @@ const StyledOverlay=styled.div`
         text-align: center;
         font-size: 1.25rem;
         color: ${colors.color}
+        margin-bottom: 1rem;
     }
 `
 
@@ -34,8 +35,13 @@ class Overlay extends Component {
 
         return (
             <StyledOverlay>
-                <header>Hey, this is a phone only app fool!</header>
-                <p>Open this link on your phone and "Add to Home Screen" to see these <em>incredible</em> seven dinosaurs! Wow!</p>
+                <header>Hey, this is a phone only app!</header>
+                <p>
+                    Have you ever needed tdo <em>see</em> SEVEN ENTIRE DINOSAURS whenever you want?
+                </p>
+                <p>
+                    Open this link on your phone and "Add to Home Screen" to see these <em>incredible</em> seven dinosaurs! Wow!
+                </p>
             </StyledOverlay> 
         )
     }
