@@ -6,6 +6,7 @@ import { dinosaurs } from '../config/dinosaurs'
 import { styles } from '../config/styles'
 import { colors } from '../config/colors'
 
+import Overlay from './overlay';
 import Nav from './navigation';
 import Dinosaurs from './dinosaurs'
 
@@ -60,28 +61,36 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<StyledApp>
-				<Router>
-					<Route
-						render={({ location }) => (
-							<div>
-								<Route
-									exact path="/"
-									render={() => <Redirect to={this.state.dinosaur ? this.state.dinosaur : dinosaurs[0]} />}
-								/>
-
-								<Dinosaurs
-									dinosaurs={dinosaurs}
-									location={location}
-								/>
-
-								<Nav dinosaurs={dinosaurs} />
-
-							</div>
-						)}
-					/>
-				</Router>
-			</StyledApp>
+			<div>
+				{
+					1 === 1
+					?
+					<Overlay />
+					:
+					<StyledApp>
+						<Router>
+							<Route
+								render={({ location }) => (
+									<div>
+										<Route
+											exact path="/"
+											render={() => <Redirect to={this.state.dinosaur ? this.state.dinosaur : dinosaurs[0]} />}
+										/>
+	
+										<Dinosaurs
+											dinosaurs={dinosaurs}
+											location={location}
+										/>
+	
+										<Nav dinosaurs={dinosaurs} />
+	
+									</div>
+								)}
+							/>
+						</Router>
+					</StyledApp>
+				}
+			</div>
 		);
 	}
 }

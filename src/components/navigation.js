@@ -114,7 +114,6 @@ const StyledNav = styled.nav`
             }
 
             &.active {
-                font-weight: bold;
                 position: relative;
                 z-index: 500;
 
