@@ -25,7 +25,7 @@ class Nav extends Component {
         )
         
         links.map((link, index) => {
-            var degree =  -90 * (index / (this.props.dinosaurs.length - 1))
+            var degree =  90 + (-90 * (index / (this.props.dinosaurs.length - 1)))
             link.setAttribute("style", 
                 `transform: rotate(${degree}deg);`
             );
@@ -94,7 +94,7 @@ const StyledNav = styled.nav`
             position: absolute;
             top: 0;
             right: 0;
-            transform-origin: center left;
+            transform-origin: center right;
             overflow: hidden;
 
             &.active {
