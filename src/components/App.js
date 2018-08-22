@@ -43,7 +43,7 @@ const StyledApp = styled.div`
 export default class App extends Component {
 
 	componentDidMount() {
-		window.screen.orientation.lock('portrait-primary')
+		// window.screen.orientation.lock('portrait-primary')
 	}
 
 	render() {

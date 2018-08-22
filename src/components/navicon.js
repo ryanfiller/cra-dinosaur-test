@@ -23,7 +23,22 @@ const StyledNavicon = styled.div`
     }
 
     .open & {
-        background: green;
+        span {
+            display: none;
+        }
+
+        &:before, &:after {
+            position: absolute;
+            top: 50%;
+        }
+
+        &:after {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &:before {
+            transform: translateY(-50%) rotate(45deg);
+        }
     }
 `
 

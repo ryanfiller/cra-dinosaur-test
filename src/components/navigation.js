@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import Navicon from './navicon'
 
+import { styles } from '../config/styles'
 import { colors } from '../config/colors';
 
 class Nav extends Component {
@@ -41,11 +42,12 @@ class Nav extends Component {
     render() {
        return (
         <StyledNav className={this.state.navOpen === true ? 'open' : 'closed'}>
+        {console.log(this.props.location)}
             <Navicon toggleNav={this.toggleNav} />
             <ul>
                 {this.props.dinosaurs.map( (dinosaur, index) => {
                     return (
-                        <li key={index} ref={this.linkRef} className="link">
+                        <li key={index} ref={this.linkRef} className={this.props.location.pathname === `/${dinosaur}` ? 'link active' : 'link'}>
                             <Link to={dinosaur}>
                                 {dinosaur}
                             </Link>
@@ -90,18 +92,13 @@ const StyledNav = styled.nav`
         z-index: -1;
         
         li {
-            padding-right: 3.5em;
             position: absolute;
+            padding: 0 3.5em 0 1rem;
             top: 0;
             right: 0;
             transform-origin: center right;
-            overflow: hidden;
-
-            &.active {
-                font-weight: bold;
-                position: relative;
-                z-index: 300;
-            }
+            width: 100%;
+            text-align: right;
 
             a {
                 color: ${colors.color}
@@ -111,11 +108,24 @@ const StyledNav = styled.nav`
             }
 
             &.active {
-                background-color: ${colors.background}
+                font-weight: bold;
+                position: relative;
 
                 a {
-                    color: ${colors.active}
+                    color: ${colors.active};
+                    text-shadow: .5rem .5rem 1em ${colors.background},
+                                 -.5rem .5rem 1em ${colors.background},
+                                 .5rem -.5rem 1em ${colors.background},
+                                 -.5rem -.5rem 1em ${colors.background};
                 }
+            }
+        }
+    }
+
+    &.open {
+        li {
+            &.active {
+                background-color: transparent;
             }
         }
     }
@@ -124,6 +134,11 @@ const StyledNav = styled.nav`
         li {
             transform: rotate(0deg) !important;
             padding-right: 1.5em;
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
         }
     }
 `
