@@ -11,9 +11,10 @@ import { styles } from '../config/styles'
 const Styles = styled.div`
 
     position: relative;
-    width: 100vw;
-    height: 100vw;
-    background: red;
+
+    & > div {
+        height: 100%;
+    }
 
     .dinosaur-enter {
         opacity: 0;
@@ -36,10 +37,6 @@ const Styles = styled.div`
     .dinosaur-exit.dinosaur-exit-active {
         opacity: 0;
         transform: translateX(100%)
-    }
-
-    img {
-        width: 300px;
     }
 `
 

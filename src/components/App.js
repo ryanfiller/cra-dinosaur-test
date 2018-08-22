@@ -4,10 +4,12 @@ import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
 
 import { dinosaurs } from '../config/dinosaurs'
 import { styles } from '../config/styles'
+import { colors } from '../config/colors'
 
 import Nav from './navigation';
 import Dinosaurs from './dinosaurs'
 
+// require("typeface-ubuntu")
 
 injectGlobal`
 	body {
@@ -15,6 +17,7 @@ injectGlobal`
 		font-size: 12px;
 		margin: 0;
 		padding: 0;
+		background-color: ${colors.background}
 
 		* {
 			transition: ${styles.transition}ms;
@@ -27,6 +30,7 @@ const StyledApp = styled.div`
 	& > div { /* router is kind of dumb */
 		height: 100vh;
 		width: 100vw;
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import { colors } from '../config/colors'
+
 const StyledNavicon = styled.div`
     display: flex;
     flex-direction: column;
@@ -13,9 +15,9 @@ const StyledNavicon = styled.div`
 
     &:before, &:after, span {
         display: block;
-        background: blue;
-        height: 2px;
+        height: .25rem;
         width: 100%;
+        background-color: ${colors.color}
     }
 `
 

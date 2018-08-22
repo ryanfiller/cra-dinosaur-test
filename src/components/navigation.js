@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import styled from 'styled-components';
 
 import Navicon from './navicon'
 
 import { colors } from '../config/colors';
 
-export default class Nav extends Component {
+class Nav extends Component {
 
     linkRef = React.createRef();
 
@@ -58,6 +58,9 @@ export default class Nav extends Component {
     }
 }
 
+const NavWithRouter = withRouter(Nav)
+export default NavWithRouter
+
 const StyledNav = styled.nav`
 
     font-size: 2rem;
@@ -83,7 +86,6 @@ const StyledNav = styled.nav`
         height: 1em;
         padding-left: 1em;
         width: 100%;
-        background: pink;
         position: relative;
         z-index: -1;
         
@@ -102,9 +104,18 @@ const StyledNav = styled.nav`
             }
 
             a {
+                color: ${colors.color}
                 text-transform: uppercase;
                 font-size: .75em;
-                padding: .125em 0;
+                text-decoration: none;
+            }
+
+            &.active {
+                background-color: ${colors.background}
+
+                a {
+                    color: ${colors.active}
+                }
             }
         }
     }

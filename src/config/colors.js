@@ -1,4 +1,5 @@
 export const colors = {
-    'red': 'red',
-    'blue': 'blue'
+    background: 'midnightblue',
+    color: 'aqua',
+    active: 'lime',
 }
