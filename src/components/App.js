@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled, { injectGlobal } from 'styled-components';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
+import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 import { dinosaurs } from '../config/dinosaurs'
 import { styles } from '../config/styles'
@@ -62,34 +63,33 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-				{
-					1 === 1
-					?
+				<BrowserView>
 					<Overlay />
-					:
+				</BrowserView>
+				<MobileView>
 					<StyledApp>
-						<Router>
-							<Route
-								render={({ location }) => (
-									<div>
-										<Route
-											exact path="/"
-											render={() => <Redirect to={this.state.dinosaur ? this.state.dinosaur : dinosaurs[0]} />}
-										/>
-	
-										<Dinosaurs
-											dinosaurs={dinosaurs}
-											location={location}
-										/>
-	
-										<Nav dinosaurs={dinosaurs} />
-	
-									</div>
-								)}
-							/>
-						</Router>
-					</StyledApp>
-				}
+							<Router>
+								<Route
+									render={({ location }) => (
+										<div>
+											<Route
+												exact path="/"
+												render={() => <Redirect to={this.state.dinosaur ? this.state.dinosaur : dinosaurs[0]} />}
+											/>
+		
+											<Dinosaurs
+												dinosaurs={dinosaurs}
+												location={location}
+											/>
+		
+											<Nav dinosaurs={dinosaurs} />
+		
+										</div>
+									)}
+								/>
+							</Router>
+						</StyledApp>
+				</MobileView>
 			</div>
 		);
 	}
