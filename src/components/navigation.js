@@ -98,7 +98,7 @@ const StyledNav = styled.nav`
         
         li {
             position: absolute;
-            padding: 0 3.5em 0 0;
+            /* padding: 0 3.5em 0 0; */
             top: 0;
             right: 0;
             transform-origin: center right;
@@ -110,6 +110,7 @@ const StyledNav = styled.nav`
                 text-transform: uppercase;
                 font-size: .75em;
                 text-decoration: none;
+                margin-right: 4em;
             }
 
             &.active {
@@ -139,11 +140,14 @@ const StyledNav = styled.nav`
     &.closed {
         li {
             transform: rotate(0deg) !important;
-            padding-right: 1.5em;
             opacity: 0;
 
             &.active {
                 opacity: 1;
+            }
+
+            a {
+                margin-right: 2em;
             }
         }
     }
