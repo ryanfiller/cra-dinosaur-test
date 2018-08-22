@@ -39,16 +39,21 @@ class Nav extends Component {
         })
     }
 
+    handleClick(e) {
+        e.preventDefault()
+        this.props.history.push(e.target.getAttribute('href'))
+        this.toggleNav()
+    }
+
     render() {
        return (
         <StyledNav className={this.state.navOpen === true ? 'open' : 'closed'}>
-        {console.log(this.props.location)}
             <Navicon toggleNav={this.toggleNav} />
             <ul>
                 {this.props.dinosaurs.map( (dinosaur, index) => {
                     return (
                         <li key={index} ref={this.linkRef} className={this.props.location.pathname === `/${dinosaur}` ? 'link active' : 'link'}>
-                            <Link to={dinosaur}>
+                            <Link to={dinosaur} onClick={(e) => this.handleClick(e)}>
                                 {dinosaur}
                             </Link>
                         </li>
