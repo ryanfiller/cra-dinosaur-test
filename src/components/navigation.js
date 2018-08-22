@@ -110,13 +110,18 @@ const StyledNav = styled.nav`
             &.active {
                 font-weight: bold;
                 position: relative;
+                z-index: 500;
 
                 a {
                     color: ${colors.active};
-                    text-shadow: .5rem .5rem 1em ${colors.background},
-                                 -.5rem .5rem 1em ${colors.background},
-                                 .5rem -.5rem 1em ${colors.background},
-                                 -.5rem -.5rem 1em ${colors.background};
+                    text-shadow: .5rem .5rem .5em ${colors.background},
+                                 1rem 1rem .5em ${colors.background},
+                                 -.5rem .5rem .5em ${colors.background},
+                                 -1rem 1rem .5em ${colors.background},
+                                 .5rem -.5rem .5em ${colors.background},
+                                 1rem -1rem .5em ${colors.background},
+                                 -.5rem -.5rem .5em ${colors.background},
+                                 -1rem -1rem .5em ${colors.background};
                 }
             }
         }
