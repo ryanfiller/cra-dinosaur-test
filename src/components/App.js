@@ -89,22 +89,22 @@ export default class App extends Component {
 											/>
 
 											<div style={style.container}>
-													<Camera
-														style={style.preview}
-														ref={(cam) => {
-															this.camera = cam;
-														}}
-													>
-														<div style={style.captureContainer} onClick={this.takePicture}>
-															<div style={style.captureButton} />
-														</div>
-													</Camera>
-														<img
-														style={style.captureImage}
-														ref={(img) => {
-															this.img = img;
-														}}
-													/>
+												<Camera
+													style={style.preview}
+													ref={(cam) => {
+														this.camera = cam;
+													}}
+												>
+													<div style={style.captureContainer} onClick={this.takePicture}>
+														<div style={style.captureButton} />
+													</div>
+												</Camera>
+												<img
+													style={style.captureImage}
+													ref={(img) => {
+														this.img = img;
+													}}
+												/>
 											</div>
 		
 											<Dinosaurs
