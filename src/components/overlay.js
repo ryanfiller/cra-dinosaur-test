@@ -37,7 +37,7 @@ class Overlay extends Component {
             <StyledOverlay>
                 <header>Hey, this is a phone only app!</header>
                 <p>
-                    Have you ever needed tdo <em>see</em> SEVEN ENTIRE DINOSAURS whenever you want?
+                    Have you ever needed to <em>see</em> SEVEN ENTIRE DINOSAURS whenever you want?
                 </p>
                 <p>
                     Open this link on your phone and "Add to Home Screen" to see these <em>incredible</em> seven dinosaurs! Wow!

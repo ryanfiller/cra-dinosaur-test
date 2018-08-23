@@ -9,7 +9,8 @@
     }
   ],
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "midnightblue",
-  "background_color": "midnightblue"
+  "background_color": "midnightblue",
+  "orientation": "portrait"
 }
